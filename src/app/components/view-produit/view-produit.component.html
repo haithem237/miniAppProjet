@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Categorie</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/addProduit">Add Produit</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!--Main Content-->
+    <div class="mt-5">
+        <h1 class="text-center">Liste des  produits</h1>
+        <div class="container">
+            <!--Add User Button-->
+            <div class="my-3">
+                <a href="/addProduit"><button type="button" class="btn btn-primary">Ajouter Produit</button></a>
+            </div>
+
+            <div class="my-3"> 
+              <button class="btn btn-success btn-right" (click)="downlodCsvFil()" >Import Excel </button>
+            </div>
+          <button type="button" class="btn btn-outline-primary"(click)="downloadPDF()">Export to PDF</button>
+            
+          <div class="input-group">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="button"  class="btn btn-outline-primary">search</button>
+          </div>
+
+
+
+        
+
+            <table class="table border" id="my-table" >
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Disponible</th>
+                    <th scope="col">Date de création</th>
+                    <th scope="col">Date de modification</th>
+                    <th scope="col">Options</th>
+                  </tr> 
+                </thead>
+                <tbody>
+                  <tr *ngFor="let produit of produits">
+                    <td>{{produit.id}}</td>   
+                    <td>{{produit.nom}}</td>  
+                    <td>{{produit.qte}}</td>  
+                    <td>{{produit.disponible}}</td>
+                    <td>{{produit.dateDeCreation}}</td>
+                    <td>{{produit.dateDeModification}}</td>
+                    <td> 
+                        <div class="d-inline mx-2">
+                            <button class="btn btn-warning" (click)="updateProduit(produit.id)" type="button">Update</button>
+                        </div>  
+                        <div class="d-inline">
+                          <button class="btn btn-danger" (click)="deleteProduit(produit.id)" type="button">Delete</button>
+                        </div>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html> 
+
+<router-outlet></router-outlet>
+
+
+
