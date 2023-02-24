@@ -9,8 +9,8 @@ import { ViewProduitComponent } from './components/view-produit/view-produit.com
 import { AddcategorieComponent } from './components/addcategorie/addcategorie.component';
 import { UpdateCategorieComponent } from './components/update-categorie/update-categorie.component';
 import { ViewCategorieComponent } from './components/view-categorie/view-categorie.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,10 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
      BrowserModule,
      AppRoutingModule, 
-     BrowserAnimationsModule,
      HttpClientModule,
-     NgbModule,
      ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

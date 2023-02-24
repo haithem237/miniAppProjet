@@ -12,7 +12,7 @@ import {ProduitService} from 'src/app/produit.service'
 })
 export class AddProduitComponent implements OnInit {
 
-  private url="http://localhost:8080/produit/addProduct";
+  private url="http://localhost:8080/produit/";
 
   constructor(private service: ProduitService, private router: Router) { }
   data: any;

@@ -21,13 +21,13 @@ export class ProduitService {
 
   addProduit(id:any, produit : Produit) {
      
-    return this.http.post<Produit>(`${this.url}/addProduct/`+id, produit)
+    return this.http.post<Produit>(`${this.url}/`+id, produit)
   }  
 
   // Get Produits - Read 
 
   getProduits(): Observable<any[]> {        
-    return this.http.get<any[]>(this.url+'/findAllProduct')
+    return this.http.get<any[]>(this.url+'/getAllProduct')
   }
 
   // Get Produit by Id - Read
